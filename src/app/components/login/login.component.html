@@ -1,0 +1,18 @@
+<form [formGroup]='formGrop' (ngSubmit)='login()'>
+    <div class="label">
+      <P style="font-size: 35px;"><b>in to your workspace</b> </P>
+    </div>
+  
+    <div class="container">
+      <label ><b>Enter your workspace's Slack URL.</b></label>
+      <input formControlName='user' placeholder=" your-workspace-url">
+  
+      <label for="psw"><b>Password</b></label>
+      <input formControlName='password' placeholder="Password">
+          
+      <button type="submit" [disabled]='!formGrop.valid'>Continue</button>
+      
+    </div>
+  
+  </form>
+  
