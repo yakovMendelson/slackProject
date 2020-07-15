@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChateComponent } from './components/chate/chate.component';
 
 import { EvenPipe } from './pipes/even.pipe';
+import { ModuleChateModule } from './module-chate/module-chate.module';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { EvenPipe } from './pipes/even.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModuleChateModule
 
 
   ],

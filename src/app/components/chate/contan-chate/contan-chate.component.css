@@ -1,0 +1,19 @@
+.contanerer{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.list{
+    width: 35%;
+}
+.messageer{
+    width: 65%;
+}
+.historyer{
+    height: 600px;
+    background: rosybrown;
+}
+.inputer{
+    height: 35%;
+    background: royalblue;
+}
