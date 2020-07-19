@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ChateComponent } from './components/chate/chate.component';
 import { LoginComponent } from './components/login/login.component';
-import { GradService } from './servies/grad.service';
+import { GuardLoginGuard } from './guards/guard-login.guard';
+
 
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'chate', component: ChateComponent,
-  canActivate:[GradService]
-}
+  canActivate:[GuardLoginGuard]
+},
+{path: '**', component: LoginComponent},
 ];
 
 
