@@ -1,1 +1,7 @@
-<p>list-message works!</p>
+
+<div *ngFor='let i of a |async'>
+    <li>{{i.id}}</li>
+    <li>{{i.name}}</li>
+    <li>{{i.phone}}</li>
+
+</div>

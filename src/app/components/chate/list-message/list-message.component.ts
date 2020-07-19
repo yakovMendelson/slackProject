@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetHttpService } from 'src/app/servies/get-http.service';
+
 
 @Component({
   selector: 'app-list-message',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-message.component.css']
 })
 export class ListMessageComponent implements OnInit {
-
-  constructor() { }
+a
+  constructor( private http:GetHttpService) { }
 
   ngOnInit(): void {
+   this.a= this.http.getAllData()
   }
+
 
 }

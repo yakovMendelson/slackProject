@@ -10,6 +10,8 @@ import { ChateComponent } from './components/chate/chate.component';
 
 import { EvenPipe } from './pipes/even.pipe';
 import { ModuleChateModule } from './module-chate/module-chate.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { ModuleChateModule } from './module-chate/module-chate.module';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    ModuleChateModule
+    ModuleChateModule,
+    HttpClientModule
+   
 
 
   ],
