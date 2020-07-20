@@ -1,19 +1,24 @@
-.contanerer{
+.contaner{
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 .list{
-    width: 35%;
+    width: 13%;
+    height: 100vh;
+    overflow: auto;
 }
-.messageer{
-    width: 65%;
+.message{
+    width: 87%;
+    
 }
-.historyer{
-    height: 600px;
-    background: rosybrown;
+.history{
+    height: 85vh;
+    padding-top: 60px;
+    overflow-y: auto;
 }
-.inputer{
-    height: 35%;
-    background: royalblue;
+.input{
+    height: 15vh;
+
 }
+

@@ -12,8 +12,12 @@ a
   constructor( private http:GetHttpService) { }
 
   ngOnInit(): void {
-   this.a= this.http.getAllData()
+   this.a= this.http.getAllDataUsers()
+  }
+  details(id){
+   this.http.getMessageById(id);
   }
 
+  
 
 }

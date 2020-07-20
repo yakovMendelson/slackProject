@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit{
 
 
   constructor(private UserPasswordSER:UserPasswordSERService, private router:Router) {
-    console.log('constractor')
+
     
     
   }

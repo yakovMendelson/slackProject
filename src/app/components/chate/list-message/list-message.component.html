@@ -1,7 +1,15 @@
 
-<div *ngFor='let i of a |async'>
+<!-- <div *ngFor='let i of a |async'>
     <li>{{i.id}}</li>
     <li>{{i.name}}</li>
     <li>{{i.phone}}</li>
 
+</div> -->
+<div class="contaner">
+<div *ngFor='let i of a |async' class="card text-white bg-primary mb-3" style="max-width: 18rem;" (click)='details(i.id)'>
+    <div class="card-body">
+      <h5 class="card-title">{{i.name}}</h5>
+      <p class="card-text">{{i.phone}}</p>
+    </div>
+  </div>
 </div>

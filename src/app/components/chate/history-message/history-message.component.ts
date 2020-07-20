@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetHttpService } from 'src/app/servies/get-http.service';
 
 @Component({
   selector: 'app-history-message',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryMessageComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private http:GetHttpService) { }
+  data
   ngOnInit(): void {
+    this.http.dataReday.subscribe((data)=>this.data=data)
   }
+
 
 }
