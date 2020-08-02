@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GetHttpService } from 'src/app/servies/get-http.service';
+import { GetDetailsService } from 'src/app/servies/get-details.service';
+
 
 
 @Component({
@@ -8,14 +9,18 @@ import { GetHttpService } from 'src/app/servies/get-http.service';
   styleUrls: ['./list-message.component.css']
 })
 export class ListMessageComponent implements OnInit {
-a
-  constructor( private http:GetHttpService) { }
 
+  constructor(private usersSER:GetDetailsService) { }
+  users
   ngOnInit(): void {
-   this.a= this.http.getAllDataUsers()
+    this.usersSER.getAllUsers();
+    this.usersSER.userReady.subscribe(data=>
+      this.users=data)
+
+    
   }
   details(id){
-   this.http.getMessageById(id);
+  
   }
 
   

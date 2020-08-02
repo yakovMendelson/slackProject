@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "slack-project-39f6e": {
+      "hosting": {
+        "slackProject": [
+          "slack-project-39f6e"
+        ]
+      }
+    }
+  }
+}

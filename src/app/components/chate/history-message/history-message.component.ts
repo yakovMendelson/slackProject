@@ -1,18 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { GetHttpService } from 'src/app/servies/get-http.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-history-message',
   templateUrl: './history-message.component.html',
   styleUrls: ['./history-message.component.css']
 })
-export class HistoryMessageComponent implements OnInit {
+export class HistoryMessageComponent implements OnInit,OnDestroy{
 
-  constructor(private http:GetHttpService) { }
-  data
+
+  constructor() { }
+  
+  
+
   ngOnInit(): void {
-    this.http.dataReday.subscribe((data)=>this.data=data)
+  
   }
-
-
+  ngOnDestroy(): void {
+     
+  }
 }
+
+
+
+
+
+

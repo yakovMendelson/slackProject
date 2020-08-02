@@ -1,6 +1,10 @@
 .card{
     margin-left: 20px;
+    padding: 2.5px;
 }
 .contaner{
     margin-top: 70px;
+}
+.card-title{
+    font-size: 25px;
 }

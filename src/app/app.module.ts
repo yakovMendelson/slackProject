@@ -12,6 +12,16 @@ import { EvenPipe } from './pipes/even.pipe';
 import { ModuleChateModule } from './module-chate/module-chate.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/users';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+
+
+
+
 
 
 @NgModule({
@@ -20,16 +30,25 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     LoginComponent,
     ChateComponent,
-    EvenPipe
+    EvenPipe,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     ModuleChateModule,
-    HttpClientModule
-   
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    HttpClientModule, 
+    StoreModule.forRoot( {Users:reducer}, {
 
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      }
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25 })
+  
 
   ],
   providers: [],

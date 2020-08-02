@@ -1,3 +1,4 @@
 <div class="form">
-    <textarea id="txt" type="text" ></textarea>
+    <textarea (keyup.enter)='send(inp)' type="text" #inp></textarea>
+    <button (click)='send(inp)'>send</button>
 </div>
