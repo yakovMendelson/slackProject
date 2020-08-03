@@ -1,7 +1,7 @@
 
 <div *ngIf='users' class="contaner">
-<div *ngFor='let i of users ' class="card text-white  mb-3" style="max-width: 18rem;" (click)='details(i.id)'>
-    <div class="card-body bg-primary">
+<div *ngFor='let i of users ' class="card text-white   mb-3" style="max-width: 18rem;" (click)='details(i)'>
+    <div class="btn btn-success btn-default btn-block card-body bg-primary">
       <h5 class="card-title">{{i}}</h5>
     </div>
   </div>

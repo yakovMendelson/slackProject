@@ -4,7 +4,7 @@ import { ListMessageComponent } from '../components/chate/list-message/list-mess
 import { InputMessageComponent } from '../components/chate/input-message/input-message.component';
 import { ContanChateComponent } from '../components/chate/contan-chate/contan-chate.component';
 import { HistoryMessageComponent } from '../components/chate/history-message/history-message.component';
-import { AddUserComponent } from '../components/add-user/add-user.component';
+
 
 
 
@@ -13,8 +13,7 @@ import { AddUserComponent } from '../components/add-user/add-user.component';
     HistoryMessageComponent ,
     ContanChateComponent,
     InputMessageComponent,
-    ListMessageComponent,
-    AddUserComponent
+    ListMessageComponent
   ],
   exports:[
     ContanChateComponent

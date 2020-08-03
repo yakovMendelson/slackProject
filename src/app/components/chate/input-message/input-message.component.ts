@@ -10,12 +10,13 @@ import { GetDetailsService } from 'src/app/servies/get-details.service';
 export class InputMessageComponent implements OnInit {
 
   constructor(private firestore: AngularFirestore , private getDetailsSER :GetDetailsService) { }
-
+ nameAdress
   ngOnInit(): void {
+    this.getDetailsSER.readyDeatils.subscribe(()=>  this.nameAdress=this.getDetailsSER.getNameAdress())
   }
 
   send(mes){
-    this.firestore.collection('messages').add({date:new Date,message:mes.value,name:this.getDetailsSER.getNameUser()})
+    this.firestore.collection('messages').add({date:new Date,message:mes.value,name:this.getDetailsSER.getNameUser(),nameAdress:this.nameAdress})
     mes.value=''
   }
   

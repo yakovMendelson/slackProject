@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class GetDetailsService {
-
+readyDeatils:Subject<null>=new Subject()
 userReady:Subject<string[]>=new Subject();
   constructor(private usersSER :UserPasswordSERService) { }
 
@@ -24,5 +24,9 @@ userReady:Subject<string[]>=new Subject();
 
   getNameUser(){
       return this.usersSER.getnameUser()
+  }
+
+  getNameAdress(){
+    return this.usersSER.getNameAdress()
   }
 }

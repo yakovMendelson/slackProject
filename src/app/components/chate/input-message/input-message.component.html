@@ -1,4 +1,4 @@
-<div class="form">
-    <textarea (keyup.enter)='send(inp)' type="text" #inp></textarea>
+<div class="form" *ngIf='nameAdress'>
+    <textarea placeholder='send message to {{nameAdress}}' (keyup.enter)='send(inp)' type="text" #inp></textarea>
     <button (click)='send(inp)'>send</button>
 </div>

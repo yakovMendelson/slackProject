@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { UserPasswordSERService } from 'src/app/servies/user-password-ser.service';
+import { messaging } from 'firebase';
 
 
 
@@ -11,15 +13,20 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class HistoryMessageComponent implements OnInit,OnDestroy{
 
 
-  constructor() { }
+  constructor(private users: UserPasswordSERService) { }
   
-  
+  messages
 
   ngOnInit(): void {
-  
-  }
-  ngOnDestroy(): void {
+    this.users.mesReady.subscribe(messages=>{
+      this.messages=messages
+ 
      
+    })
+  }
+  
+  ngOnDestroy(): void {
+        
   }
 }
 
