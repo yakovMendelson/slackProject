@@ -1,9 +1,9 @@
 
 <div *ngIf='users' class="contaner">
 <div *ngFor='let i of users ' class="card text-white   mb-3" style="max-width: 18rem;" (click)='details(i)'>
-    <div class="btn btn-success btn-default btn-block card-body bg-primary">
+    <button class="btn btn-info btn-block">
       <h5 class="card-title">{{i}}</h5>
-    </div>
+    </button>
   </div>
  
 </div>

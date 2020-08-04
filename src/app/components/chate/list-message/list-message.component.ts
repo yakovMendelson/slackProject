@@ -20,21 +20,18 @@ export class ListMessageComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    this.detailsSER.readyDeatils.subscribe(()=>{
+    this.detailsSER.readyDeatils.subscribe(() => {
       this.firestore.collection('messages').valueChanges().subscribe(messages => {
-      let mesTemp: any[] = [];
-      messages.forEach(mes => {
+        let mesTemp: any[] = [];
+        messages.forEach(mes => {
 
-        if (mes['name'] == this.dataSER.getnameUser() && mes['nameAdress'] == this.dataSER.getNameAdress())
-          mesTemp.push(mes)
-
-        // if (mes['name'] == this.dataSER.getNameAdress() && mes['nameAdress'] == this.dataSER.getnameUser())
-        //   this.dataSER.setMessage(mes)
+          if (mes['name'] == this.dataSER.getnameUser() && mes['nameAdress'] == this.dataSER.getNameAdress() ||
+            mes['name'] == this.dataSER.getNameAdress() && mes['nameAdress'] == this.dataSER.getnameUser())
+            mesTemp.push(mes)
+        })
+        this.dataSER.setMessage(mesTemp)
       })
-      this.dataSER.setMessage(mesTemp)
     })
-    })
-    
     this.detailsSER.getAllUsers();
     this.mmory = this.detailsSER.userReady.subscribe(data =>
       this.users = data)

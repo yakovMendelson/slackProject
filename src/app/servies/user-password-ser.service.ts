@@ -16,12 +16,11 @@ export class UserPasswordSERService {
   userReady:Subject<null>=new Subject();
   mesReady:Subject<any>=new Subject();
   nameUserAdresse:string;
- 
-  messages:string[]=[]
+
   
 
   constructor(private firestore: AngularFirestore, private router: Router) {
-    this.users = this.firestore.collection('users').valueChanges({idField: 'IdUser'})
+    this.users = this.firestore.collection('users').valueChanges()
   }
 
   add() {
@@ -59,8 +58,7 @@ export class UserPasswordSERService {
       this.password=password
   }
   setMessage(mes){
-     this.messages=mes;
-     this.mesReady.next(this.messages);
+     this.mesReady.next(mes);
   }
  
   

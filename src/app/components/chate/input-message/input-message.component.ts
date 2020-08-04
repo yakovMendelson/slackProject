@@ -16,7 +16,8 @@ export class InputMessageComponent implements OnInit {
   }
 
   send(mes){
-    this.firestore.collection('messages').add({date:new Date,message:mes.value,name:this.getDetailsSER.getNameUser(),nameAdress:this.nameAdress})
+    let d=JSON.stringify(new Date) 
+    this.firestore.collection('messages').doc(d).set({date:d,message:mes.value,name:this.getDetailsSER.getNameUser(),nameAdress:this.nameAdress})
     mes.value=''
   }
   
